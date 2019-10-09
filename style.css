@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+body{
+   font-family: 'Lato', sans-serif;
+}
+a{
+  text-decoration:none;
+  color:#fff;
+  padding: .4em 1.2em;
+  background-color:rgba(255,0,0,.6);
+  transition: background-color .3s, color .3s;
+}
+a:hover{
+  background-color:rgba(255,0,0,.8);
+  color:black;
+}
+.container{
+  width:300px;
+  flex-direction:column;
+  display:flex;
+  margin:auto;
+  margin-top:8.3em;
+  position:relative; 
+}
+.board{
+  display:none;
+}
+.container>h1{
+  text-align:center;
+  font-size:2.7em;
+  margin-bottom:.5em;
+}
+.row{
+  width:100%;
+  height:100px;
+  display:flex;
+}
+.board>.row:not(:last-child){
+  border-bottom:1px solid black;
+}
+.row>div:not(:last-child){
+  border-right:1px solid black;
+}
+.row div{
+  cursor:pointer;
+  width:100px;
+  height:100%;
+  text-align:center;
+  font-size:4em;
+  font-family:
+    'Comic Sans MS';
+  transition:background-color .3s,font-size .3s;
+}
+.row div:hover{
+  background-color:#CFD8DC;
+}
+.winner{
+  background-color:#FF5252
+}
+.gameover{
+  display:none;
+  position:absolute;
+  top:40%;
+  left:0;
+  width:100%;
+  height:130px;
+  text-align:center;
+  line-height:3.5em;
+  font-size:1.3em;
+  transition: visiblity .3s,opacity .3s;
+  background-color:#e2e2e2;;
+}
+.winText{
+  font-size:1.8em;
+  margin-bottom:-20px;
+}
+.invisible{
+  visiblity:hidden;
+  opacity:0;
+}
+.select{
+  position:absolute;
+  width:100%;
+  height:145px;
+  padding:.65em;
+  top:150%;
+  left:0;
+  z-index:1000;
+  text-align:center;
+  background-color:#e2e2e2;
+}
+.select>a{
+padding: .3em 2em;
+}
+.select>h1{
+  margin-bottom:.6em;
+  font-size:1.8em;
+}
+.radio-label-container{
+  margin-left:1.8em;
+  margin-bottom:.8em;
+}
+.rd-cont{
+  display: inline-block;
+  position: relative;
+  padding-left: 1.5em;
+  margin-right:2em;
+  margin-bottom: .5em;
+  cursor: pointer;
+  font-size: 1.3em;
+  user-select: none;
+}
+.rd-cont input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.rd-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+    transition: all .3s;
+}
+.rd-cont:hover input ~ .rd-box {
+  background-color: rgba(255,138,128,.5);
+}
+.rd-cont input:checked ~ .rd-box {
+  background-color: #FF8A80;
+}
+.rd-cont input:checked ~ .rd-box:after {
+  display: block;
+}
+.rd-cont .rd-box::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
