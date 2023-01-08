@@ -35,6 +35,9 @@ const startGame =()=>{
   });
   gameOverDialog.classList.add('invisible');
   setTimeout(()=>gameOverDialog.style.display = 'none',400);
+  if(aiPlayer == 'X') {
+    setTimeout(()=> changeTurn(bestSpot(),aiPlayer) ,401) 
+  }
 };
 
 //startGame();
